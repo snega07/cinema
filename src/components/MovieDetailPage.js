@@ -220,7 +220,7 @@ function MovieDetailPage(props) {
             </div>
           </div>
           <div className=" row row-padding">
-            <div className="col-sm-8">
+            <div className="col-sm-2">
               <button
                 className="btn"
                 variant="primary"
@@ -235,7 +235,7 @@ function MovieDetailPage(props) {
                 Update Details
               </button>
             </div>
-            <div className="col-sm-2">
+            <div className="col-sm-3">
               <button
                 className="btn"
                 variant="primary"
