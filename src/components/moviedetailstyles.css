@@ -2,7 +2,7 @@
   border-image-slice: 1;
   border-width: 5px;
   border-bottom: 5px solid;
-  border: linear-gradient(to left, #fff0b3, #806600);
+  border-image-source: linear-gradient(to left, #fff0b3, #806600);
 }
 .back {
   background-color: #756213;
