@@ -1,0 +1,108 @@
+.bg{
+  background: url(../images/splashimage1.jpg) no-repeat center center fixed; 
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.cont{
+    text-align: center;
+    float: right;
+    margin-right: 250px;
+    margin-top: 60px;
+   
+  }
+  .spinner {
+    border: 3px solid #222021;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+  }
+  #load2 {
+    border: 3px solid #bc8c5b;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    top: -210px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+  }
+  #load3 {
+    border: 3px solid #19191b;
+    width: 240px;
+    height: 240px;
+    position: relative;
+    top: -440px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+  }
+  #load4 {
+    border: 3px solid #c1a959;
+    width: 260px;
+    height: 260px;
+    position: relative;
+    top: -690px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+  }
+
+.timer-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20%;
+        background-color: transparent;
+        border: 30px solid coral;
+        padding-top: 50px;
+        padding-left: 500px;
+        color: aliceblue
+      }
+  #txt{
+    color: black;
+    font-family: Arial;
+    font-size: 60px;
+    position: relative;
+    top: -875px;
+    font-weight: 900;
+        
+      }
+  @keyframes rotate {
+        0% {
+          transform: rotateZ(-360deg)
+        }
+        100% {
+          transform: rotateZ(0deg)
+        }
+      }
+  @keyframes rotate2 {
+        0% {
+          transform: rotateZ(360deg)
+        }
+        100% {
+          transform: rotateZ(0deg)
+        }
+      }
+/*
+.timer {
+        font-family: "Montserrat";
+
+      }
+.value {
+        font-size: 60px;
+        color: #222021;
+        font-weight: 900;
+      
+      }*/
+      /*    background-image: url(../images/splashimage1.jpg);
+   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
