@@ -18,24 +18,30 @@ function SplashScreen(props) {
 
   return (
     <div className="bg">
+    
+        <div className="row">
       <p
         style={{
           fontSize: "20px",
           fontWeight: "900",
-          aligntems: "center",
-          paddingTop: "50px",
-          paddingLeft: "500px",
+          paddingTop: "100px",
+          paddingLeft:"500px"
         }}
       >
+
         A Film is a Petrified Fountain of Thought.
       </p>
-      <div className="cont" style={{ paddingLeft: "560px" }}>
+      </div>
+      <div className="row"> 
+      <div className="cont" style={{ paddingLeft: "560px",paddingTop:"30px" }}>
         <div className="spinner" id="load"></div>
         <div className="spinner" id="load2"></div>
         <div className="spinner" id="load3"></div>
         <div className="spinner" id="load4"></div>
         <div id="txt">{time}</div>
       </div>
+      </div>
+      
     </div>
   );
 }

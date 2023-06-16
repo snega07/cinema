@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/cinema' exact element={<SplashScreen maxrange={6} />}></Route>
+          <Route path='/cinema' exact element={<SplashScreen maxrange={60} />}></Route>
           <Route path='/login' exact element={<Login />}></Route>
         </Routes>
       </Router>

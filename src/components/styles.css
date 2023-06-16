@@ -1,6 +1,6 @@
 .bg{
   background: url(../images/splashimage1.jpg) no-repeat center center fixed; 
-  height: 100vh;
+  height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -54,17 +54,6 @@
     animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
   }
 
-.timer-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20%;
-        background-color: transparent;
-        border: 30px solid coral;
-        padding-top: 50px;
-        padding-left: 500px;
-        color: aliceblue
-      }
   #txt{
     color: black;
     font-family: Arial;
