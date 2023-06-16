@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./moviedetailstyles.css";
 import LimitModal from "./LimitModal";
+import { FaPlus,FaMinus } from 'react-icons/fa';
 
 function MovieDetailPage(props) {
   const initialData = Object.freeze({
@@ -73,7 +74,8 @@ function MovieDetailPage(props) {
         color: "#ffffff",
         fontSize: "20px",
         fontWeight: "500",
-        textAlign: "left"
+        textAlign: "left",
+        backgroundColor: "#222021"
       }}
     >
       <div
@@ -107,7 +109,7 @@ function MovieDetailPage(props) {
                   style={{ height: "400px" }}
                 />
               </div>
-              <div className=" row row-padding" style={{ color: "#85662b" }}>
+              <div className=" row row-padding">
 
 
                 <div className="col-sm-3">
@@ -120,7 +122,7 @@ function MovieDetailPage(props) {
                 </div>
               </div>
             </div>
-            <div className="col text-center box" style={{ color: "#85662b", fontWeight: "600", marginLeft: '10px' }}>
+            <div className="col text-center box" style={{ fontWeight: "600", marginLeft: '10px' }}>
               <h2 style={{ color: "#FFA500", fontWeight: "600" }}>Plot Summary</h2> {moviedata.plot}
             </div>
           </div>
@@ -180,7 +182,7 @@ function MovieDetailPage(props) {
                       <div className="col-sm-2 ">
                         <span>Cast & Crew:</span>
                       </div>
-                      <span>{selected === 0 ? "-" : "+"}</span>
+                      <span>{selected === 0 ? <FaMinus/>:<FaPlus /> }</span>
                     </div>
 
                     <div
