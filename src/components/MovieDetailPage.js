@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./moviedetailstyles.css";
+import "../styles/moviedetailstyles.css";
 import LimitModal from "./LimitModal";
 import { FaPlus, FaMinus, FaStar } from 'react-icons/fa';
+import ReviewComponent from "./ReviewComponent";
 
 function MovieDetailPage(props) {
 
@@ -77,13 +78,11 @@ function MovieDetailPage(props) {
         color: "#ffffff",
         fontSize: "20px",
         fontWeight: "500",
-        textAlign: "left",
-        backgroundColor: "756213",
-        backgroundImage: "linear-gradient(315deg, #756213 0%, #000000 74%)",
+        backgroundColor: "#363636",
         overflow: "hidden"
       }}
     >
-      <div className="row box" style={{ margin: "20px", }} >
+      <div className="box-main" style={{ margin: "20px", }} >
         <div style={{
           backgroundImage: `url(${moviedata.moviePoster})`,
           height: "300px",
@@ -119,130 +118,133 @@ function MovieDetailPage(props) {
         </div>
       </div>
 
-      <div className=" row row-padding">
-        <div className=" row item back">
-          <div className="col-sm-2">
-            <span>ReleaseDate:</span>
-          </div>
+      <div className="box" style={{textAlign:"left"}}>
+        <div className="row " >
+          <div className="col-sm-2"><span>ReleaseDate:</span></div>
           <div className="col-sm-2">{moviedata.releaseDate}</div>
         </div>
-        <div className=" row item back">
+        <div className=" row  ">
           <div className="col-sm-2">
             <span>Language:</span>
           </div>
           <div className="col-sm-2">{moviedata.language}</div>
         </div>
-        <div className=" row item back">
+        <div className=" row">
           <div className="col-sm-2">
             <span>Type:</span>
           </div>
           <div className="col-sm-2">{moviedata.movie_type}</div>
         </div>
-        <div className=" row item back">
+        <div className=" row">
           <div className="col-sm-2">
             <span>Director:</span>
           </div>
           <div className="col-sm-2">{moviedata.Director}</div>
         </div>
-        <div className=" row item back">
+        <div className=" row ">
           <div className="col-sm-2">
             <span>Producer:</span>
           </div>
           {moviedata.producer.map((producer, index) => (
-            <div className="col-sm-2">{producer}</div>
+            <div key={index} className="col-sm-2">{producer}</div>
           ))}
         </div>
 
-        <div className=" row item back">
+        <div className=" row ">
           <div className="col-sm-2">
             <span>Genre:</span>
           </div>
           {moviedata.genre.map((genre, index) => (
-            <div className="col-sm-2">{genre}</div>
+            <div key={index} className="col-sm-2">{genre}</div>
           ))}
         </div>
-
-        <div className="row item back">
-          <div>
-            <div className="wrapper">
-              <div className="accordian">
-                <div>
-                  <div className="title" onClick={() => toggle(0)}>
-                    <div className="col-sm-2 ">
-                      <span>Cast & Crew:</span>
-                    </div>
-                    <span>{selected === 0 ? <FaMinus /> : <FaPlus />}</span>
+      </div>
+      <div className="box" style={{ textAlign:"left"}}>
+        <div>
+          <div className="wrapper">
+            <div className="accordian">
+              <div>
+                <div className="title" onClick={() => toggle(0)}>
+                  <div className="col-sm-2 ">
+                    <span>Cast & Crew:</span>
                   </div>
+                  <span>{selected === 0 ? <FaMinus /> : <FaPlus />}</span>
+                </div>
 
-                  <div
-                    className={selected === 0 ? "content show" : "content"} style={{ paddingTop: '10px' }}
-                  >
-                    {moviedata.cast.map((item, index) => (
-                      <div className="row" style={{ paddingTop: "10px" }}>
-                        <div className="col">
-                          <img
-                            src={item.castUrl}
-                            className="card-img-top"
-                            alt={item.castName}
-                            style={{ height: "200px", width: "200px" }}
-                          />
-                        </div>
-                        <div className="col">
-                          <span style={{ color: "#ffffff" }}>
-                            {item.castName}
-                          </span>
-                        </div>
-                        <div className="col">
-                          <span style={{ color: "#ffffff" }}>
-                            As
-                          </span>
-                        </div>
-                        <div className="col">
-                          <span style={{ color: "#ffffff" }}>
-                            {item.role}
-                          </span>
-                        </div>
+                <div
+                  className={selected === 0 ? "content show" : "content"} style={{ paddingTop: '10px' }}
+                >
+                  {moviedata.cast.map((item, index) => (
+                    <div className="row" key={index} style={{ paddingTop: "10px" }}>
+                      <div className="col">
+                        <img
+                          src={item.castUrl}
+                          className="card-img-top"
+                          alt={item.castName}
+                          style={{ height: "200px", width: "200px" }}
+                        />
                       </div>
-                    ))}
-                  </div>
+                      <div className="col">
+                        <span style={{ color: "#ffffff" }}>
+                          {item.castName}
+                        </span>
+                      </div>
+                      <div className="col">
+                        <span style={{ color: "#ffffff" }}>
+                          As
+                        </span>
+                      </div>
+                      <div className="col">
+                        <span style={{ color: "#ffffff" }}>
+                          {item.role}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className=" row row-padding">
-          <div className="col-sm-2">
-            <button
-              className="btn"
-              variant="primary"
-              type="Submit"
-              style={{
-                backgroundColor: "#FFA500",
-                borderColor: "#FFA500",
-                color: "black",
-              }}
-              onClick={() => handleUpdate()}
-            >
-              Update Details
-            </button>
-          </div>
-          <div className="col-sm-3">
-            <button
-              className="btn"
-              variant="primary"
-              type="Submit"
-              style={{
-                backgroundColor: "#FFA500",
-                borderColor: "#FFA500",
-                color: "black",
-              }}
-              onClick={() => handleLimitReview()}
-            >
-              Limit Reviews
-            </button>
-            <LimitModal model={model} setModel={setModel} handleChange={handleChange} saveLimit={saveLimit} />
-          </div>
+      </div>
+      <div className=" row row-padding" >
+        <div className="col">
+          <button
+            className="btn"
+            variant="primary"
+            type="Submit"
+            style={{
+              backgroundColor: "#FFA500",
+              borderColor: "#FFA500",
+              color: "black",
+            }}
+            onClick={() => handleUpdate()}
+          >
+            Update Details
+          </button>
         </div>
+        <div className="col">
+          <button
+            className="btn"
+            variant="primary"
+            type="Submit"
+            style={{
+              backgroundColor: "#FFA500",
+              borderColor: "#FFA500",
+              color: "black",
+            }}
+            onClick={() => handleLimitReview()}
+          >
+            Limit Reviews
+          </button>
+          <LimitModal model={model} setModel={setModel} handleChange={handleChange} saveLimit={saveLimit} />
+        </div>
+
+      </div>
+      
+      <div style={{textAlign:"left"}}>
+      <span style={{margin:"20px",fontSize:"30px"}} >REVIEWS:</span>
+        <ReviewComponent/>
       </div>
 
     </div>
