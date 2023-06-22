@@ -3,6 +3,7 @@ import "../styles/moviedetailstyles.css";
 import LimitModal from "./LimitModal";
 import { FaPlus, FaMinus, FaStar } from 'react-icons/fa';
 import ReviewComponent from "./ReviewComponent";
+import { useNavigate } from "react-router-dom";
 
 function MovieDetailPage(props) {
 
@@ -19,31 +20,32 @@ function MovieDetailPage(props) {
     plot: 'Spider-Man" centers on student Peter Parker (Tobey Maguire) who, after being bitten by a genetically-altered spider, gains superhuman strength and the spider-like ability to cling to any surface. He vows to use his abilities to fight crime, coming to understand the words of his beloved Uncle Ben: "With great power comes great responsibility.',
     Director: "Sam Raimi",
     Box_office_collection: "USD 120.5 million",
-    cast: [
-      {
-        castName: "Tobey Maguire",
-        castUrl: "https://tinyurl.com/3tcde3ud",
-        role: "spiderman"
-      },
-      {
-        castName: "Andrew Russell Garfield",
-        castUrl: "https://tinyurl.com/2a56d4st",
-        role: "spiderman"
-      },
-      {
-        castName: "Tom Holland",
-        castUrl: "https://tinyurl.com/3jjak759",
-        role: "spiderman"
-      },
-    ],
     movie_type: "Hollywood",
   });
 
+  const initialCast = Object.freeze([
+    {
+      castName: "Tobey Maguire",
+      castUrl: "https://tinyurl.com/3tcde3ud",
+      role: "spiderman"
+    },
+    {
+      castName: "Andrew Russell Garfield",
+      castUrl: "https://tinyurl.com/2a56d4st",
+      role: "spiderman"
+    },
+    {
+      castName: "Tom Holland",
+      castUrl: "https://tinyurl.com/3jjak759",
+      role: "spiderman"
+    },
+  ])
   const [selected, setSelected] = useState(null);
   const [moviedata, changeMovieData] = useState(initialData);
+  const [cast, setCast] = useState(initialCast);
   const [model, setModel] = useState(false);
   const [limit, setLimit] = useState(0);
-  const MyBackgroundImage = moviedata.moviePoster;
+  const navigate = useNavigate();
   const toggle = (i) => {
     if (selected === i) {
       console.log(selected);
@@ -64,7 +66,7 @@ function MovieDetailPage(props) {
     console.log(limit);
   }
   const handleUpdate = () => {
-    // function to control update detail button
+    navigate("/profile");
   };
   const handleLimitReview = () => {
     // function to control update detail button
@@ -118,7 +120,7 @@ function MovieDetailPage(props) {
         </div>
       </div>
 
-      <div className="box" style={{textAlign:"left"}}>
+      <div className="box" style={{ textAlign: "left" }}>
         <div className="row " >
           <div className="col-sm-2"><span>ReleaseDate:</span></div>
           <div className="col-sm-2">{moviedata.releaseDate}</div>
@@ -159,7 +161,7 @@ function MovieDetailPage(props) {
           ))}
         </div>
       </div>
-      <div className="box" style={{ textAlign:"left"}}>
+      <div className="box" style={{ textAlign: "left" }}>
         <div>
           <div className="wrapper">
             <div className="accordian">
@@ -174,7 +176,7 @@ function MovieDetailPage(props) {
                 <div
                   className={selected === 0 ? "content show" : "content"} style={{ paddingTop: '10px' }}
                 >
-                  {moviedata.cast.map((item, index) => (
+                  {cast.map((item, index) => (
                     <div className="row" key={index} style={{ paddingTop: "10px" }}>
                       <div className="col">
                         <img
@@ -241,10 +243,10 @@ function MovieDetailPage(props) {
         </div>
 
       </div>
-      
-      <div style={{textAlign:"left"}}>
-      <span style={{margin:"20px",fontSize:"30px"}} >REVIEWS:</span>
-        <ReviewComponent/>
+
+      <div style={{ textAlign: "left" }}>
+        <span style={{ margin: "20px", fontSize: "30px" }} >REVIEWS:</span>
+        <ReviewComponent />
       </div>
 
     </div>

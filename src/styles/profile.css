@@ -1,0 +1,43 @@
+.box {
+    background-color: rgba(0, 0, 0, 0.3);
+   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+   border-radius: 5px;
+   margin: 20px;
+   padding: 20px;
+   
+ }
+ .row-padding {
+    padding: 20px;
+  }
+
+  .lbl{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .password-input-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .password-input-field {
+    padding-right: 2.5rem; /* Add padding for the toggle button */
+  }
+  
+  .password-toggle-btn {
+    position: absolute;
+    top: 60%;
+    right: 20rem;
+    transform: translateY(-50%);
+    color: #ffa500;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  
+  
